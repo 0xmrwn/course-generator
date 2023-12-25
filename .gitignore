@@ -1,3 +1,13 @@
+# Project Specific
+
+# Junk
+.DS_Store
+.vscode/
+example/
+
+# Logs
+*.log
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
