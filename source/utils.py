@@ -1,115 +1,84 @@
+import json
 import os
-import re
-import sys
-from collections import OrderedDict
 
 import yaml
-from loguru import logger
-
-logger.add(
-    sys.stdout,
-    colorize=True,
-    format="<green>{time}</green> <level>{message}</level>",
-    filter="my_module",
-)
 
 
-def represent_ordereddict(dumper, data):
-    return dumper.represent_dict(data.items())
+def get_specs(subchapter_id: str) -> str:
+    with open(
+        os.path.join(".", "courses", "seconde", "maths", "specs", f"{subchapter_id}.md")
+    ) as file:
+        specs = file.read()
+    return specs
 
 
-def represent_str(dumper, data):
-    if ":" in data or any(c in data for c in "{}[],&*#?|-<>=!%@\\"):
-        return dumper.represent_scalar("tag:yaml.org,2002:str", data, style='"')
-    return dumper.represent_scalar("tag:yaml.org,2002:str", data)
+def get_subchapter(chapter_id: str, subchapter_id: str) -> tuple:
+    with open(
+        os.path.join(".", "courses", "seconde", "maths", "structure", "structure.yaml")
+    ) as file:
+        structure = yaml.safe_load(file)
+    chapter_name = structure["maths_seconde_2019"][chapter_id]["chapter_name"]
+    subchapter_name = structure["maths_seconde_2019"][chapter_id]["sub_chapters"][
+        subchapter_id
+    ]["name"]
+    subchapter_content = structure["maths_seconde_2019"][chapter_id]["sub_chapters"][
+        subchapter_id
+    ]["name"]
+    return (chapter_name, subchapter_name, subchapter_content)
 
 
-yaml.add_representer(OrderedDict, represent_ordereddict)
-yaml.add_representer(str, represent_str)
+def get_spec_json(subchapter_id: str) -> dict:
+    with open(
+        os.path.join(
+            ".",
+            "courses",
+            "seconde",
+            "maths",
+            "specs",
+            f"{subchapter_id}_objectives.json",
+        )
+    ) as file:
+        specs = json.load(file)
+    return specs
 
 
-def parse_line(line):
-    """
-    Parses a single line of Markdown and returns its type and content.
-    """
-    if line.startswith("# "):
-        return "main_topic", re.findall(r"^# (.+)$", line)[0]
-    elif line.startswith("## "):
-        return "chapter", re.findall(r"^## (.+)$", line)[0]
-    elif line.startswith("### "):
-        return "subchapter", re.findall(r"^### (.+)$", line)[0]
-    elif re.match(r"^\d+\. ", line):
-        return "content", re.findall(r"^\d+\. (.+)$", line)[0]
-    elif line.strip() == "":
-        return "empty", line  # Handling empty lines
-    else:
-        return "unknown", line
+def count_files(dir: str):
+    directory = os.path.join(".", "courses", "seconde", "maths", dir)
+    file_count = len(
+        [
+            name
+            for name in os.listdir(directory)
+            if os.path.isfile(os.path.join(directory, name))
+        ]
+    )
+    return file_count
 
 
-def build_yaml_structure(markdown_text):
-    """
-    Converts the Markdown text to a structured YAML format using OrderedDict.
-    """
-    yaml_structure = OrderedDict()
-    current_chapter = None
-    current_subchapter = None
-
-    for line in markdown_text.splitlines():
-        line_type, content = parse_line(line)
-
-        if line_type == "main_topic":
-            main_topic = content.lower().replace(" ", "_")
-            yaml_structure[main_topic] = OrderedDict()
-        elif line_type == "chapter":
-            current_chapter, chapter_name = re.findall(r"^(.+?)\s*:\s*(.+)$", content)[
-                0
-            ]
-            current_chapter = current_chapter.lower().replace(" ", "_")
-            yaml_structure[main_topic][current_chapter] = {
-                "chapter_name": chapter_name,
-                "sub_chapters": OrderedDict(),
-            }
-        elif line_type == "subchapter":
-            current_subchapter, subchapter_name = re.findall(
-                r"^(.+?)\s*:\s*(.+)$", content
-            )[0]
-            subchapter_name = subchapter_name.replace("’", "'")
-            current_subchapter = current_subchapter.lower().replace(" ", "_")
-            yaml_structure[main_topic][current_chapter]["sub_chapters"][
-                current_subchapter
-            ] = OrderedDict([("name", subchapter_name), ("content", [])])
-        elif line_type == "content":
-            yaml_structure[main_topic][current_chapter]["sub_chapters"][
-                current_subchapter
-            ]["content"].append(content.replace("’", "'"))
-        elif line_type == "empty":
-            continue
-        elif line_type == "unknown":
-            logger.warning(f"Unknown line type encountered: {content}")
-
-    return yaml_structure
+def get_latest_raw_response(subchapter_id: str) -> str:
+    latest_version = count_files("raw_courses") - 1
+    with open(
+        os.path.join(
+            ".",
+            "courses",
+            "seconde",
+            "maths",
+            "raw_courses",
+            f"{subchapter_id}_response_{latest_version}.md",
+        )
+    ) as file:
+        specs = file.read()
+    return specs
 
 
-def save_to_yaml(data, filename):
-    """
-    Saves the structured data to a YAML file with UTF-8 encoding.
-    """
-    try:
-        with open(filename, "w", encoding="utf-8") as file:
-            yaml.dump(data, file, allow_unicode=True)
-        logger.info(f"YAML file saved successfully: {filename}")
-    except Exception as e:
-        logger.error(f"Error while saving YAML file: {e}")
+def save_markdown_output(directory: str, version: str, content: str):
+    with open(
+        os.path.join(
+            ".", "courses", "seconde", "maths", directory, f"c1s1_response_{version}.md"
+        ),
+        "w",
+    ) as file:
+        file.write(content)
 
 
 if __name__ == "__main__":
-    input_filepath = os.path.join(
-        ".", "courses", "seconde", "maths", "structure", "raw_structure.md"
-    )
-    output_filepath = os.path.join(
-        ".", "courses", "seconde", "maths", "structure", "structure.yaml"
-    )
-    with open(input_filepath, "r") as file:
-        md_content = file.read()
-    yaml_data = build_yaml_structure(md_content)
-    save_to_yaml(yaml_data, output_filepath)
+    pass
