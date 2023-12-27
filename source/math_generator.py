@@ -8,7 +8,7 @@ from langchain_core.messages import SystemMessage
 from langchain_core.output_parsers import StrOutputParser
 
 
-class CourseGenerator:
+class MathCourseGenerator:
     def __init__(self, prompts: dict) -> None:
         self.prompts = prompts
         self.model = ChatOpenAI(

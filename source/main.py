@@ -2,7 +2,7 @@ import os
 
 import yaml
 from dotenv import load_dotenv
-from generator import CourseGenerator
+from math_generator import MathCourseGenerator
 
 load_dotenv()
 with open(os.path.join(".", "prompts.yaml")) as file:
@@ -12,7 +12,7 @@ with open(os.path.join(".", "prompts.yaml")) as file:
 def main():
     chapter_id = "c1"
     subchapter_id = "c1s1"
-    gen = CourseGenerator(prompts)
+    gen = MathCourseGenerator(prompts)
     gen.generate_content(chapter_id, subchapter_id)
 
 
