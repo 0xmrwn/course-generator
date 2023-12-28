@@ -4,11 +4,25 @@ import yaml
 
 
 def write_file(fname, content):
+    """
+    Write content to a file.
+
+    Args:
+        fname (str): The name of the file to write to.
+        content (str): The content to write to the file.
+    """
     with open(fname, "w") as f:
         f.write(content)
 
 
 def write_json_file(fname, json_str: str):
+    """
+    Write content to a JSON file.
+
+    Args:
+        fname (str): The name of the file to write to.
+        json_str (str): The JSON string to write to the file.
+    """
     # convert ' to "
     json_str = json_str.replace("'", '"')
 
@@ -21,6 +35,13 @@ def write_json_file(fname, json_str: str):
 
 
 def write_yml_file(fname, json_str: str):
+    """
+    Write content to a YAML file.
+
+    Args:
+        fname (str): The name of the file to write to.
+        json_str (str): The JSON string to write to the file.
+    """
     # Try to replace single quotes with double quotes for JSON
     cleaned_json_str = json_str.replace("'", '"')
 

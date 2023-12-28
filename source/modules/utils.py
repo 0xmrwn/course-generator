@@ -5,6 +5,15 @@ import yaml
 
 
 def get_specs(subchapter_id: str) -> str:
+    """
+    Retrieve the specifications for a given subchapter.
+
+    Args:
+        subchapter_id (str): The ID of the subchapter.
+
+    Returns:
+        str: The specifications for the specified subchapter.
+    """
     with open(
         os.path.join(".", "courses", "seconde", "maths", "specs", f"{subchapter_id}.md")
     ) as file:
@@ -13,6 +22,16 @@ def get_specs(subchapter_id: str) -> str:
 
 
 def get_subchapter_identity(chapter_id: str, subchapter_id: str) -> tuple:
+    """
+    Retrieve the identity of a subchapter.
+
+    Args:
+        chapter_id (str): The ID of the chapter.
+        subchapter_id (str): The ID of the subchapter.
+
+    Returns:
+        tuple: A tuple containing the chapter name and subchapter name.
+    """
     chapter_id = chapter_id.lower()
     subchapter_id = subchapter_id.lower()
     with open(
@@ -27,6 +46,15 @@ def get_subchapter_identity(chapter_id: str, subchapter_id: str) -> tuple:
 
 
 def get_spec_json(subchapter_id: str) -> dict:
+    """
+    Retrieve the JSON specifications for a given subchapter.
+
+    Args:
+        subchapter_id (str): The ID of the subchapter.
+
+    Returns:
+        dict: The JSON specifications for the specified subchapter.
+    """
     with open(
         os.path.join(
             ".",
@@ -42,6 +70,16 @@ def get_spec_json(subchapter_id: str) -> dict:
 
 
 def get_input_scope(chapter_id: str, subchapter_id: str) -> str:
+    """
+    Retrieve the input scope for a given chapter and subchapter.
+
+    Args:
+        chapter_id (str): The ID of the chapter.
+        subchapter_id (str): The ID of the subchapter.
+
+    Returns:
+        str: The input scope markdown string.
+    """
     chapter_id = chapter_id.lower()
     subchapter_id = subchapter_id.lower()
     with open(
