@@ -1,0 +1,20 @@
+{
+    "prerequisites": [
+        "Compréhension des nombres naturels (notés ℕ), incluant la capacité de compter, d'ordonner et de réaliser des opérations de base (addition, soustraction, multiplication, division).",
+        "Connaissance de la notion de l'ensemble des entiers relatifs (notés ℤ), y compris les entiers positifs, négatifs et le zéro.",
+        "Compréhension des opérations arithmétiques de base (addition, soustraction, multiplication, et la division euclidienne).",
+        "Familiarité avec la notion d'égalité et d'inégalité entre nombres.",
+        "Capacité à reconnaître et à utiliser les propriétés de l'addition et de la multiplication (associativité, commutativité, élément neutre, distributivité).",
+        "Savoir lire et écrire des nombres en notation décimale et comprendre la valeur positionnelle des chiffres."
+    ],
+    "objectives": [
+        "Comprendre et utiliser correctement les notations ℕ (pour les nombres entiers naturels) et ℤ (pour les nombres entiers relatifs).",
+        "Définir et identifier les multiples et diviseurs d'un nombre entier, ainsi que les notions de nombre pair et impair.",
+        "Modéliser et résoudre des problèmes qui font appel aux notions de multiple, diviseur, nombre pair, nombre impair et nombre premier.",
+        "Présenter les résultats fractionnaires sous forme irréductible en utilisant les notions de multiples et diviseurs.",
+        "Démontrer que la somme de deux multiples d'un nombre entier a est également un multiple de a.",
+        "Démontrer que le carré d'un nombre impair est toujours impair.",
+        "Utiliser des algorithmes pour déterminer si un entier naturel est multiple d'un autre, trouver le plus grand multiple de a inférieur ou égal à b, et déterminer si un entier naturel est premier.",
+        "Développer une compréhension de base de la théorie des nombres et de ses applications pratiques."
+    ]
+}

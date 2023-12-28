@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "course-generator"
+version = "0.1.0"
+description = ""
+authors = ["skeptic-aptitude <137830713+skeptic-aptitude@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+openai = "^1.6.1"
+pyyaml = "^6.0.1"
+python-dotenv = "^1.0.0"
+langchain = "^0.0.352"
+loguru = "^0.7.2"
+pyautogen = "^0.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
