@@ -1,12 +1,25 @@
 import autogen
 
 # build the gpt_configuration object
+# AutoGen config list
+config_list = autogen.config_list_from_dotenv(
+    dotenv_file_path=".env",
+    model_api_key_map={
+        "gpt-4-1106-preview": "OPENAI_API_KEY",
+    },
+    filter_dict={
+        "model": {
+            "gpt-4-1106-preview",
+        }
+    },
+)
+
 # Base Configuration
 base_config = {
     # "use_cache": False,
     "temperature": 0,
-    "config_list": autogen.config_list_from_models(["gpt-4-1106-preview"]),
-    # "request_timeout": 120,
+    "config_list": config_list,
+    "timeout": 250,
 }
 
 # Configuration with "write_file"

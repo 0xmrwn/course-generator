@@ -35,11 +35,12 @@ def main():
         "input_specs": input_specs_md,
     }
     raw_prompt = """
-    Génère un cours couplet pour le sous chapitre : "{chapter_name}", faisant partie du chapitre "{subchapter_name}".
-    
-    {input_scope}
+Sous-chapitre : "{chapter_name}", faisant partie du chapitre "{subchapter_name}".
 
-    {input_specs}
+{input_scope}
+
+---- CONTRAINTES ----
+{input_specs}
     """
     prompt = raw_prompt.format(**prompt_kwargs)
     session_id = rand.generate_session_id(CHAPTER_ID, SUBCHAPTER_ID)
@@ -68,7 +69,7 @@ def main():
                 f"❌ Orchestrator failed. Team: {course_generation_orchestrator.name} Failed"
             )
 
-    print(course_generation_conversation_result.messages[-1])
+    # print(course_generation_conversation_result.messages[-1])
 
 
 if __name__ == "__main__":
