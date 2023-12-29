@@ -264,3 +264,55 @@ class Orchestrator:
                     last_message_str=self.last_message_always_string,
                     error_message=error_message,
                 )
+
+    def broadcast_conversation(self, prompt: str) -> ConversationResult:
+        """
+        Broadcast a message from agent_a to all agents.
+
+        For example
+            "Agent A" -> "Agent B"
+            "Agent A" -> "Agent C"
+            "Agent A" -> "Agent D"
+            "Agent A" -> "Agent E"
+        """
+
+        print(f"\n\n--------- {self.name} Orchestrator Starting ---------\n\n")
+
+        self.add_message(prompt)
+
+        broadcast_agent = self.agents[0]
+
+        for idx, agent_iterate in enumerate(self.agents[1:]):
+            print(
+                f"\n\n--------- Running iteration {idx} with (agent_broadcast: {broadcast_agent.name}, agent_iteration: {agent_iterate.name}) ---------\n\n"
+            )
+
+            # agent_a -> chat -> agent_b
+            if self.last_message_is_string:
+                self.memory_chat(broadcast_agent, agent_iterate, prompt)
+
+            # agent_b -> func() -> agent_b
+            if self.last_message_is_func_call and self.has_functions(agent_iterate):
+                self.function_chat(agent_iterate, agent_iterate, self.latest_message)
+
+            self.spy_on_agents()
+
+        print("-------- Orchestrator Complete --------\n\n")
+
+        was_successful, error_message = self.handle_validate_func()
+
+        if was_successful:
+            print("✅ Orchestrator was successful")
+        else:
+            print("❌ Orchestrator failed")
+
+        cost, tokens = self.get_cost_and_tokens()
+
+        return ConversationResult(
+            success=was_successful,
+            messages=self.messages,
+            cost=cost,
+            tokens=tokens,
+            last_message_str=self.last_message_always_string,
+            error_message=error_message,
+        )
