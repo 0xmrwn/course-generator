@@ -1,5 +1,5 @@
 import autogen
-import prompts.course_gen_team as cg_team
+import prompts.generation_team as gen_team
 from agents import agents_config
 from agents.instruments import FileAgentInstruments
 from modules import orchestrator
@@ -15,7 +15,7 @@ def build_course_generation_team(instruments: FileAgentInstruments):
     # admin user proxy agent - takes in the prompt and manages the group chat
     user_proxy = autogen.UserProxyAgent(
         name="Admin",
-        system_message=cg_team.USER_PROXY_PROMPT,
+        system_message=gen_team.USER_PROXY_PROMPT,
         code_execution_config=False,
         human_input_mode="NEVER",
     )
@@ -24,7 +24,7 @@ def build_course_generation_team(instruments: FileAgentInstruments):
     inspector = autogen.AssistantAgent(
         name="Inspecteur",
         llm_config=agents_config.base_config,
-        system_message=cg_team.INSPECTOR_PROMPT,
+        system_message=gen_team.INSPECTOR_PROMPT,
         code_execution_config=False,
         human_input_mode="NEVER",
     )
@@ -33,7 +33,7 @@ def build_course_generation_team(instruments: FileAgentInstruments):
     writer = autogen.AssistantAgent(
         name="Rédacteur",
         llm_config=agents_config.base_config,
-        system_message=cg_team.WRITER_PROMPT,
+        system_message=gen_team.WRITER_PROMPT,
         code_execution_config=False,
         human_input_mode="NEVER",
     )

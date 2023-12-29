@@ -1,10 +1,47 @@
-import json
 import os
 
 import yaml
 
 
-def get_specs(subchapter_id: str) -> str:
+def get_gen_team_prompt_kwargs(chapter_id: str, subchapter_id: str) -> dict:
+    """
+    Generate prompt keyword arguments for the course generation team based on chapter and subchapter IDs.
+
+    Args:
+        chapter_id (str): The ID of the chapter.
+        subchapter_id (str): The ID of the subchapter.
+
+    Returns:
+        dict: The prompt keyword arguments containing chapter name, subchapter name, input scope, and input specs.
+    """
+    input_specs_md = _get_specs(subchapter_id)
+    input_scope_md = _get_input_scope(chapter_id, subchapter_id)
+    chapter_name, subchapter_name = _get_subchapter_identity(chapter_id, subchapter_id)
+    prompt_kwargs = {
+        "chapter_name": chapter_name,
+        "subchapter_name": subchapter_name,
+        "input_scope": input_scope_md,
+        "input_specs": input_specs_md,
+    }
+    return prompt_kwargs
+
+
+def save_raw_course(session_id: str, content: str) -> None:
+    """
+    Write content to a file.
+
+    Args:
+        session_id (str): The ID of the session.
+        content (str): The content to write to the file.
+    """
+    filepath = os.path.join(
+        ".", "courses", "seconde", "maths", "raw_courses", f"{session_id}.md"
+    )
+    with open(filepath, "w") as f:
+        f.write(content)
+
+
+def _get_specs(subchapter_id: str) -> str:
     """
     Retrieve the specifications for a given subchapter.
 
@@ -21,7 +58,7 @@ def get_specs(subchapter_id: str) -> str:
     return specs
 
 
-def get_subchapter_identity(chapter_id: str, subchapter_id: str) -> tuple:
+def _get_subchapter_identity(chapter_id: str, subchapter_id: str) -> tuple:
     """
     Retrieve the identity of a subchapter.
 
@@ -45,31 +82,7 @@ def get_subchapter_identity(chapter_id: str, subchapter_id: str) -> tuple:
     return (chapter_name, subchapter_name)
 
 
-def get_spec_json(subchapter_id: str) -> dict:
-    """
-    Retrieve the JSON specifications for a given subchapter.
-
-    Args:
-        subchapter_id (str): The ID of the subchapter.
-
-    Returns:
-        dict: The JSON specifications for the specified subchapter.
-    """
-    with open(
-        os.path.join(
-            ".",
-            "courses",
-            "seconde",
-            "maths",
-            "specs",
-            f"{subchapter_id}_objectives.json",
-        )
-    ) as file:
-        specs = json.load(file)
-    return specs
-
-
-def get_input_scope(chapter_id: str, subchapter_id: str) -> str:
+def _get_input_scope(chapter_id: str, subchapter_id: str) -> str:
     """
     Retrieve the input scope for a given chapter and subchapter.
 
