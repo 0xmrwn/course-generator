@@ -69,7 +69,8 @@ Sous-chapitre : "{chapter_name}", faisant partie du chapitre "{subchapter_name}"
                 f"❌ Orchestrator failed. Team: {course_generation_orchestrator.name} Failed"
             )
 
-    # print(course_generation_conversation_result.messages[-1])
+    print("\n-------------------------------\n")
+    print(course_generation_conversation_result.last_message_str)
 
 
 if __name__ == "__main__":
