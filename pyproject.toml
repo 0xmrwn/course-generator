@@ -6,7 +6,7 @@ authors = ["skeptic-aptitude <137830713+skeptic-aptitude@users.noreply.github.co
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.11,<3.12"
+python = ">=3.12,<3.13"
 openai = "^1.6.1"
 pyyaml = "^6.0.1"
 python-dotenv = "^1.0.0"
