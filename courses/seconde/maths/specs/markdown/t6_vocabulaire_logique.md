@@ -1,0 +1,28 @@
+# Nom
+
+Vocabulaire et Logique
+
+# Objectifs
+
+L'apprentissage des notations mathématiques et de la logique est transversal à tous les chapitres du programme. Aussi, il importe d'y travailler d’abord dans des contextes où ils se présentent naturellement, puis de prévoir des temps où les concepts et types de raisonnement sont étudiés, après avoir été ́ rencontrés plusieurs fois en situation.
+
+Les élèves doivent connaître les notions d’élément d’un ensemble, de sous-ensemble, d’appartenance et d’inclusion, de réunion, d’intersection et de complémentaire, et savoir utiliser les symboles de base correspondant : ∈, ⊂, ⋂, ⋃, ainsi que la notation des ensembles de nombres et des intervalles. Ils rencontrent également la notion de couple. Pour le complémentaire d’un sous-ensemble *A* de *E*, on utilise la notation des probabilités *Ā*, ou la notation *E* \ *A*.
+
+# Sous Thèmes
+
+## Vocabulaire ensembliste et logique
+
+### Contexte
+
+Les élèves apprennent les concepts à travers des mises en situation.
+
+### Contenu
+
+- reconnaître ce qu'est une proposition mathématique, à utiliser des variables pour écrire des propositions mathématiques ;
+- lire et écrire des propositions contenant les connecteurs « et », « ou » ;
+- formuler la négation de propositions simples (sans implication ni quantificateurs) ;
+- mobiliser un contre-exemple pour montrer qu'une proposition est fausse ;
+- formuler une implication, une équivalence logique, et à les mobiliser dans un raisonnement simple ;
+- formuler la réciproque d’une implication ;
+- lire et écrire des propositions contenant une quantification universelle ou existentielle (les symboles ∀ et ∃ sont hors programme).
+- Produire des raisonnements par disjonction des cas et par l'absurde.
