@@ -20,7 +20,7 @@ phénomène réel (par exemple : lancer de punaise, sexe d’un enfant à la nai
 
 ### Contenu
 
-L’histoire des probabilités fournit un cadre pour dégager les éléments de la mathématisation du hasard. Un exemple est le problème des partis, dit aussi du chevalier de Méré, l’échange de lettres entre Pascal et Fermat sur ce point puis les travaux de Pascal, Fermat et Huygens qui en découlent. Le problème du duc de Toscane ou les travaux de Leibniz sur le jeu de dés peuvent aussi être évoqués.
+- L’histoire des probabilités fournit un cadre pour dégager les éléments de la mathématisation du hasard. Un exemple est le problème des partis, dit aussi du chevalier de Méré, l’échange de lettres entre Pascal et Fermat sur ce point puis les travaux de Pascal, Fermat et Huygens qui en découlent. Le problème du duc de Toscane ou les travaux de Leibniz sur le jeu de dés peuvent aussi être évoqués.
 
 ## Utiliser l’information chiffrée et statistique descriptive
 

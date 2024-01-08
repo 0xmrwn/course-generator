@@ -30,7 +30,7 @@ Dans un premier temps, les élèves découvrent, manipulent et verbalisent certa
 
 ### Contenu
 
-On peut évoquer la très lente élaboration de la notion de fonction, depuis l’Antiquité jusqu’à la codification actuelle par Dirichlet, en mettant en évidence quelques étapes importantes : Newton, Leibniz, Euler. On souligne alors l’importance de la notation algébrique.
+- On peut évoquer la très lente élaboration de la notion de fonction, depuis l’Antiquité jusqu’à la codification actuelle par Dirichlet, en mettant en évidence quelques étapes importantes : Newton, Leibniz, Euler. On souligne alors l’importance de la notation algébrique.
 
 ## Se constituer un répertoire de fonctions de référence
 

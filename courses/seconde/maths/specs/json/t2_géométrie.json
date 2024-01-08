@@ -1,30 +1,30 @@
 {
   "Nom": "Géométrie",
-  "Objectifs": "Les objectifs de cette partie sont les suivants :\n\n['consolider les notions sur les configurations géométriques abordées au collège et prolonger leur étude ;', 'introduire les vecteurs du plan comme outil permettant d’étudier des problèmes issus des mathématiques et des autres disciplines, en particulier de la physique ;', 'poursuivre l’étude de la géométrie repérée, qui relie nombres, calculs algébriques, fonctions et géométrie et constitue un outil utile à d’autres disciplines. En particulier, introduire la notion d’ensemble de points du plan décrit par une équation, en explicitant le cas des équations de droites.']\n\nLes élèves découvrent les vecteurs, qui sont un outil efficace pour démontrer en géométrie et pour modéliser en physique. Ils les manipulent dans le plan muni d’un repère orthonormé. Ils approfondissent leurs connaissances sur les configurations du plan, disposent de nouveaux outils pour analyser des figures géométriques, résoudre des problèmes. ****Ils étudient les équations de droite, font le lien entre représentations géométrique, algébrique, et fonctionnelle. \n\nLa géométrie développe des capacités de représentation. Il importe de s’appuyer sur des figures, selon des modalités diverses (tracé à main levée, schéma, figure soignée, utilisation de logiciels). Dans le cadre de la résolution de problèmes, l’utilisation d’un logiciel de géométrie dynamique par les élèves leur donne une plus grande autonomie et encourage leur prise d’initiative. \n\nLe programme se place dans le cadre de la géométrie plane. Cependant, le professeur peut proposer des activités mobilisant les notions de géométrie dans l’espace vues au collège (sections, aires, volumes) enrichies de celles étudiées en seconde (vecteurs). \n\nIl convient de mettre en valeur l’intervention de la géométrie dans les autres parties du programme, notamment « Nombres et calculs » et « Fonctions ».",
+  "Objectifs": "Les objectifs de cette partie sont les suivants :\n\nconsolider les notions sur les configurations géométriques abordées au collège et prolonger leur étude ;', 'introduire les vecteurs du plan comme outil permettant d'étudier des problèmes issus des mathématiques et des autres disciplines, en particulier de la physique ;', 'poursuivre l'étude de la géométrie repérée, qui relie nombres, calculs algébriques, fonctions et géométrie et constitue un outil utile à d'autres disciplines. En particulier, introduire la notion d'ensemble de points du plan décrit par une équation, en explicitant le cas des équations de droites.\n\nLes élèves découvrent les vecteurs, qui sont un outil efficace pour démontrer en géométrie et pour modéliser en physique. Ils les manipulent dans le plan muni d'un repère orthonormé. Ils approfondissent leurs connaissances sur les configurations du plan, disposent de nouveaux outils pour analyser des figures géométriques, résoudre des problèmes. Ils étudient les équations de droite, font le lien entre représentations géométrique, algébrique, et fonctionnelle. \n\nLa géométrie développe des capacités de représentation. Il importe de s'appuyer sur des figures, selon des modalités diverses (tracé à main levée, schéma, figure soignée, utilisation de logiciels). Dans le cadre de la résolution de problèmes, l'utilisation d'un logiciel de géométrie dynamique par les élèves leur donne une plus grande autonomie et encourage leur prise d'initiative. \n\nLe programme se place dans le cadre de la géométrie plane. Cependant, le professeur peut proposer des activités mobilisant les notions de géométrie dans l'espace vues au collège (sections, aires, volumes) enrichies de celles étudiées en seconde (vecteurs). \n\nIl convient de mettre en valeur l'intervention de la géométrie dans les autres parties du programme, notamment « Nombres et calculs » et « Fonctions ».",
   "Sous Thèmes": {
     "Histoire des mathématiques": {
       "Contenu": [
         "Les progrès apportés par la « méthode des coordonnées » de Descartes, puis par la notion de vecteur, permettent de relier efficacement géométrie, physique et calcul.",
-        "On pourra évoquer les mathématiques grecques, en mettant en évidence le rôle central de la géométrie dans la naissance de l’idée de démonstration ainsi que le faible développement de l’algèbre sous l’Antiquité, en partie dû à l’appui systématique sur la géométrie."
+        "On pourra évoquer les mathématiques grecques, en mettant en évidence le rôle central de la géométrie dans la naissance de l'idée de démonstration ainsi que le faible développement de l'algèbre sous l'Antiquité, en partie dû à l'appui systématique sur la géométrie."
       ]
     },
     "Manipuler les vecteurs du plan": {
-      "Contexte": "Au cycle 4, la notion de translation fait l’objet d’une première approche, fondée sur l’observation de son effet sur les configurations planes et de manipulations diverses, notamment sur un quadrillage ou à l’aide d’un logiciel de géométrie dynamique. On s’y appuie en seconde pour introduire la notion de vecteur. Le professeur peut définir les opérations vectorielles à partir des coordonnées, ou bien commencer par leur construction géométrique. Dans tous les cas, la relation $\\vec{u} = \\vec{xi} + \\vec{yj}$ est mise en évidence. La relation de Chasles est introduite pour illustrer l'addition des vecteurs, mais ne fait pas l’objet d’un travail spécifique.",
+      "Contexte": "Au cycle 4, la notion de translation fait l'objet d'une première approche, fondée sur l'observation de son effet sur les configurations planes et de manipulations diverses, notamment sur un quadrillage ou à l'aide d'un logiciel de géométrie dynamique. On s'y appuie en seconde pour introduire la notion de vecteur. Le professeur peut définir les opérations vectorielles à partir des coordonnées, ou bien commencer par leur construction géométrique. Dans tous les cas, la relation $\\vec{u} = \\vec{xi} + \\vec{yj}$ est mise en évidence. La relation de Chasles est introduite pour illustrer l'addition des vecteurs, mais ne fait pas l'objet d'un travail spécifique.",
       "Contenu": [
-        "Vecteur $*\\vec{MM'}*$ associé à la translation qui transforme $*M$* en $*M'*$. Concepts de direction, sens et norme.",
+        "Vecteur $\\vec{MM'}$ associé à la translation qui transforme $M$ en $M'$. Concepts de direction, sens et norme.",
         "Égalité de deux vecteurs. Notation $\\vec{u}$ . Vecteur nul.",
-        "Somme de deux vecteurs en lien avec l’enchaînement des translations. Relation de Chasles.",
-        "Base orthonormée. Coordonnées d’un vecteur. Expression de la norme d’un vecteur.",
-        "Expression des coordonnées de $*\\vec{AB}*$ en fonction de celles de *A* et de *B*.",
-        "Produit d’un vecteur par un nombre réel. Colinéarité de deux vecteurs.",
-        "Déterminant de deux vecteurs dans une base orthonormée, critère de colinéarité. Application à l’alignement, au parallélisme."
+        "Somme de deux vecteurs en lien avec l'enchaînement des translations. Relation de Chasles.",
+        "Base orthonormée. Coordonnées d'un vecteur. Expression de la norme d'un vecteur.",
+        "Expression des coordonnées de $\\vec{AB}$ en fonction de celles de A et de B.",
+        "Produit d'un vecteur par un nombre réel. Colinéarité de deux vecteurs.",
+        "Déterminant de deux vecteurs dans une base orthonormée, critère de colinéarité. Application à l'alignement, au parallélisme."
       ],
       "Capacités attendues": [
         "Représenter géométriquement des vecteurs.",
         "Construire géométriquement la somme de deux vecteurs.",
-        "Représenter un vecteur dont on connaît les coordonnées. Lire les coordonnées d’un vecteur.",
-        "Calculer les coordonnées d’une somme de vecteurs, d’un produit d’un vecteur par un nombre réel.",
-        "Calculer la distance entre deux points. Calculer les coordonnées du milieu d’un segment. ****",
+        "Représenter un vecteur dont on connaît les coordonnées. Lire les coordonnées d'un vecteur.",
+        "Calculer les coordonnées d'une somme de vecteurs, d'un produit d'un vecteur par un nombre réel.",
+        "Calculer la distance entre deux points. Calculer les coordonnées du milieu d'un segment.",
         "Caractériser alignement et parallélisme par la colinéarité de vecteurs.",
         "Résoudre des problèmes en utilisant la représentation la plus adaptée des vecteurs."
       ],
@@ -37,48 +37,48 @@
     },
     "Résoudre des problèmes de géométrie": {
       "Contenu": [
-        "Projeté orthogonal d’un point sur une droite."
+        "Projeté orthogonal d'un point sur une droite."
       ],
       "Capacités attendues": [
         "Résoudre des problèmes de géométrie plane sur des figures simples ou complexes (triangles, quadrilatères, cercles).",
         "Calculer des longueurs, des angles, des aires et des volumes.",
-        "Traiter de problèmes d’optimisation."
+        "Traiter de problèmes d'optimisation."
       ],
       "Démonstrations": [
-        "Le projeté orthogonal du point *M* sur une droite Δ est le point de la droite Δ le plus proche du point *M*.",
+        "Le projeté orthogonal du point M sur une droite Δ est le point de la droite Δ le plus proche du point M.",
         "Relation trigonométrique $\\cos^2(α) + \\sin^2(α) = 1$ dans un triangle rectangle."
       ],
       "Approfondissements possibles": [
-        "Démontrer que les hauteurs d’un triangle sont concourantes.",
-        "Expression de l’aire d’un triangle : $\\frac{1}{2}ab\\sin(C)$",
-        "Formule d’Al-Kashi.",
+        "Démontrer que les hauteurs d'un triangle sont concourantes.",
+        "Expression de l'aire d'un triangle : $\\frac{1}{2}ab\\sin(C)$",
+        "Formule d'Al-Kashi.",
         "Le point de concours des médiatrices est le centre du cercle circonscrit."
       ]
     },
     "Représenter et caractériser les droites du plan": {
-      "Contexte": "Au cycle 4, les élèves ont rencontré les équations de droite pour représenter les fonctions affines. En seconde, ils étendent l’étude à la forme générale des équations de droite. *Dans cette section, le plan est muni d’un repère orthonormé.*",
+      "Contexte": "Au cycle 4, les élèves ont rencontré les équations de droite pour représenter les fonctions affines. En seconde, ils étendent l'étude à la forme générale des équations de droite. Dans cette section, le plan est muni d'un repère orthonormé.",
       "Contenu": [
-        "Vecteur directeur d’une droite.",
+        "Vecteur directeur d'une droite.",
         "Équation de droite : équation cartésienne, équation réduite.",
-        "Pente (ou coefficient directeur) d’une droite non parallèle à l’axe des ordonnées."
+        "Pente (ou coefficient directeur) d'une droite non parallèle à l'axe des ordonnées."
       ],
       "Capacités attendues": [
         "Déterminer une équation de droite à partir de deux points, un point et un vecteur directeur ou un point et la pente.",
-        "Déterminer la pente ou un vecteur directeur d’une droite donnée par une équation ou une représentation graphique.",
+        "Déterminer la pente ou un vecteur directeur d'une droite donnée par une équation ou une représentation graphique.",
         "Tracer une droite connaissant son équation cartésienne ou réduite.",
         "Établir que trois points sont alignés ou non.",
         "Déterminer si deux droites sont parallèles ou sécantes.",
-        "Résoudre un système de deux équations linéaires à deux inconnues, déterminer le point d’intersection de deux droites sécantes."
+        "Résoudre un système de deux équations linéaires à deux inconnues, déterminer le point d'intersection de deux droites sécantes."
       ],
       "Démonstrations": [
-        "En utilisant le déterminant, établir la forme générale d’une équation de droite."
+        "En utilisant le déterminant, établir la forme générale d'une équation de droite."
       ],
-      "Exemples d’algorithmes": [
-        "Étudier l’alignement de trois points dans le plan.",
+      "Exemples d'algorithmes": [
+        "Étudier l'alignement de trois points dans le plan.",
         "Déterminer une équation de droite passant par deux points donnés."
       ],
       "Approfondissements possibles": [
-        "Ensemble des points équidistants d’un point et de l’axe des abscisses.",
+        "Ensemble des points équidistants d'un point et de l'axe des abscisses.",
         "Représentation, sur des exemples, de parties du plan décrites par des inégalités sur les coordonnées."
       ]
     }

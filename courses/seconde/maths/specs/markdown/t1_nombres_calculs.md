@@ -94,9 +94,12 @@ Au cycle 4, les élèves ont étudié les inégalités pour comparer des valeurs
 
 - Règles de calcul sur les puissances entières relatives, sur les racines carrées. Relation $\sqrt{a^2} = \left| a \right|$
 - Identités (à savoir utiliser dans les deux sens)
-    - $*a^2 - b^2 = (a-b)(a+b)*$
-    - $(a+b)^2 = a^2 + 2ab + b^2$
-    - $(a-b)^2 = a^2-2ab+b^2$
+    $*a^2 - b^2 = (a-b)(a+b)*$
+    
+    $(a+b)^2 = a^2 + 2ab + b^2$
+    
+    $(a-b)^2 = a^2-2ab+b^2$
+    
 - Exemples simples de calcul sur des expressions algébriques, en particulier sur des expressions fractionnaires.
 - Somme d’inégalités. Produit d’une inégalité par un réel positif, négatif, en liaison avec le sens de variation d’une fonction affine.
 - Ensemble des solutions d’une équation, d’une inéquation.

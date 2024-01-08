@@ -22,8 +22,8 @@ L’algorithmique a une place naturelle dans tous les champs des mathématiques 
 
 ### Contenu
 
-Les textes évoqués dans la thématique « Nombres et calculs » indiquent une préoccupation algorithmique tout au long de l’Histoire. Lorsqu’un texte historique a une visée algorithmique, transformer les méthodes qu’il présente en un algorithme, voire en un programme, ou inversement, est l’occasion de travailler des changements de registre qui donnent du sens
-au formalisme mathématique.
+- Les textes évoqués dans la thématique « Nombres et calculs » indiquent une préoccupation algorithmique tout au long de l’Histoire.
+- Lorsqu’un texte historique a une visée algorithmique, transformer les méthodes qu’il présente en un algorithme, voire en un programme, ou inversement, est l’occasion de travailler des changements de registre qui donnent du sens au formalisme mathématique.
 
 ## Utiliser les variables et les instructions élémentaires
 

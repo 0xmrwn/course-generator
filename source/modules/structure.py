@@ -266,47 +266,46 @@ def validate_json_keys(json_dict) -> Tuple[bool, list]:
 
 
 def main():
-    # Load file as string and clean characters
-    filepath = os.path.join(
-        "courses", "seconde", "maths", "structure", "output-geo.json"
-    )
-    status, json_str = load_json_string(filepath)
-    if not status:
-        return
+    base_path = os.path.join(".", "courses", "seconde", "maths", "specs", "json")
+    json_files = [f for f in os.listdir(base_path) if f.endswith(".json")]
+    themes = []
+    for json_file in json_files:
+        json_file_path = os.path.join(base_path, json_file)
+        status, json_str = load_json_string(json_file_path)
+        if not status:
+            continue
 
-    # Load string as dict
-    clean_json_str = clean_raw_string(json_str)
-    status, json_data = load_dict_from_string(clean_json_str)
-    if not status:
-        return
+        # Load string as dict
+        clean_json_str = clean_raw_string(json_str)
+        status, json_data = load_dict_from_string(clean_json_str)
+        if not status:
+            continue
 
-    # Clean keys and values
-    json_data = clean_json_content(json_data)
+        # Clean keys and values
+        json_data = clean_json_content(json_data)
 
-    # Validate keys
-    kay_status = validate_json_keys(json_data)
-    if not kay_status:
-        logger.error("Failed JSON key structure validation")
-        return
-    logger.info("JSON structure is valid")
+        # Validate keys
+        kay_status = validate_json_keys(json_data)
+        if not kay_status:
+            logger.error("Failed JSON key structure validation")
+            continue
+        logger.info("JSON structure is valid")
 
-    # Validate LaTeX
-    latex_status = get_latex_analysis(json_data)
-    if not latex_status:
-        logger.error("Failed LaTeX integrity validation")
-        return
-    logger.info("LaTeX integrity is verified")
+        # Validate LaTeX
+        latex_status = get_latex_analysis(json_data)
+        if not latex_status:
+            logger.error("Failed LaTeX integrity validation")
+            continue
+        logger.info("LaTeX integrity is verified")
 
-    # Save output
-    output_filepath = os.path.join(
-        "courses", "seconde", "maths", "structure", "output-geo-clean.json"
-    )
-    with open(output_filepath, "w") as file:
-        json.dump(json_data, file, indent=2, ensure_ascii=False)
+        # Save output
 
-    theme_object = parse_json_to_pydantic(json_data)
-    print("---------------")
-    print(theme_object.model_dump_json(indent=2))
+        with open(json_file_path, "w") as file:
+            json.dump(json_data, file, indent=2, ensure_ascii=False)
+
+        theme_object = parse_json_to_pydantic(json_data)
+        themes.append(theme_object)
+    print(len(themes))
 
 
 if __name__ == "__main__":
