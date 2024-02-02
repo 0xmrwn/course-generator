@@ -13,7 +13,7 @@ python-dotenv = "^1.0.0"
 langchain = "^0.0.352"
 loguru = "^0.7.2"
 pyautogen = "^0.2.2"
-unstructured-client = "^0.15.1"
+unstructured-client = "^0.17.0"
 
 
 [build-system]
